@@ -32,16 +32,19 @@ import numpy as np
 
 
 def Lshape(x,zeta):
+
     def my_callback(model, where):
-        print("ACCESSED")
         global first_callback
         if where == GRB.Callback.MIPSOL:
+            print("ACCESSED")
             valx = model.cbGetSolution(model._vars_x)  #current x
             valzeta = model.cbGetSolution(model.getVarByName('zeta'))
             print(valx, valzeta)
             if first_callback:
                 valzeta = float('-inf')
                 first_callback=False
+                model.cbLazy(x>=1)
+                print("FIRST")
             #Get L1
             LL = Stage2par(valx,S,cases)
             print("LL", LL)
@@ -49,19 +52,22 @@ def Lshape(x,zeta):
             z = valx + LL #first part moet 1st stage objective without zeta
             print(valx, LL, z, model._best_obj)
             
-            if z < model._best_obj:
-                # Update best solution so far
-                model._best_obj = z
-                model._best_x = valx
+            
+            # if z < model._best_obj:
+            #     # Update best solution so far
+            #     model._best_obj = z
+            #     model._best_x = valx
 
-                if valzeta < LL:
-                    L=0     
-                    if valx==1:
-                        model.cbLazy(LL *(x) <= zeta)
-                        print(f"constr added: ({LL} - {L}) * ({x}) + {L} <= zeta")
-                    else:
-                        model.cbLazy(-x*LL + LL<= zeta)   
-                        print(f"constr added: ({LL} - {L}) * (-{x} + 1) + {L} <= zeta")
+            #     if valzeta < LL:
+            #         L=0     
+            #         if valx==1:
+            #             model.cbLazy(LL *(x) <= zeta)
+            #             print(f"constr added: ({LL} - {L}) * ({x}) + {L} <= zeta")
+            #             model.update()
+            #         else:
+            #             model.cbLazy(-x*LL + LL<= zeta)   
+            #             print(f"constr added: ({LL} - {L}) * (-{x} + 1) + {L} <= zeta")
+            #             model.update()
     return my_callback
     
 def Stage2par(valx,S,cases):
@@ -100,6 +106,7 @@ model.setParam(GRB.Param.LazyConstraints, 1)
 
 x = model.addVar(name='x', lb=0.0, ub=1.0, vtype = GRB.BINARY)  
 zeta = model.addVar(name='zeta', lb=0.0, vtype = GRB.CONTINUOUS) 
+#model.addConstr(-x*3.75 + 3.75<= zeta)  
 #model.addConstr(zeta ==x)
 model.setObjective(x+zeta)
 
