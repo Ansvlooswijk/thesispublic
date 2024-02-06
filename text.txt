@@ -10,15 +10,15 @@ Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
 
 Academic license 2462746 - for non-commercial use only - registered to a.___@student.utwente.nl
 Optimize a model with 0 rows, 2 columns and 0 nonzeros
-Model fingerprint: 0x8342fad3
+Model fingerprint: 0xe2acb6b6
 Variable types: 1 continuous, 1 integer (1 binary)
 Coefficient statistics:
   Matrix range     [0e+00, 0e+00]
   Objective range  [1e+00, 1e+00]
   Bounds range     [1e+00, 1e+00]
   RHS range        [0e+00, 0e+00]
-FIRST
-input stage2: -0.0
+
+input subproblem: 0.0
 Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (linux64 - "Ubuntu 22.04.1 LTS")
 
 CPU model: Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz, instruction set [SSE2|AVX|AVX2]
@@ -37,179 +37,54 @@ Found heuristic solution: objective 3.7500000
 Presolve removed 2 rows and 2 columns
 Presolve time: 0.00s
 Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 8 available processors)
+
+Solution count 1: 3.75
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.750000000000e+00, best bound 3.750000000000e+00, gap 0.0000%
+input subproblem: 0.0
+Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (linux64 - "Ubuntu 22.04.1 LTS")
+
+CPU model: Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+
+Academic license 2462746 - for non-commercial use only - registered to a.___@student.utwente.nl
+Optimize a model with 2 rows, 2 columns and 2 nonzeros
+Model fingerprint: 0x0def270c
+Variable types: 0 continuous, 2 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [8e-01, 8e-01]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [2e+00, 3e+00]
+Found heuristic solution: objective 3.7500000
+Presolve removed 2 rows and 2 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 8 available processors)
+
+Solution count 1: 3.75
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.750000000000e+00, best bound 3.750000000000e+00, gap 0.0000%
+Loaded user MIP start with objective 0
+
 
 Explored 0 nodes (0 simplex iterations) in 0.01 seconds (0.00 work units)
 Thread count was 1 (of 8 available processors)
 
-Solution count 1: 3.75
+Solution count 1: 0
 
 Optimal solution found (tolerance 1.00e-04)
-Best objective 3.750000000000e+00, best bound 3.750000000000e+00, gap 0.0000%
-Add constr
-input stage2: 0.0
-Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (linux64 - "Ubuntu 22.04.1 LTS")
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
 
-CPU model: Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz, instruction set [SSE2|AVX|AVX2]
-Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
-
-Academic license 2462746 - for non-commercial use only - registered to a.___@student.utwente.nl
-Optimize a model with 2 rows, 2 columns and 2 nonzeros
-Model fingerprint: 0x0def270c
-Variable types: 0 continuous, 2 integer (0 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [8e-01, 8e-01]
-  Bounds range     [0e+00, 0e+00]
-  RHS range        [2e+00, 3e+00]
-Found heuristic solution: objective 3.7500000
-Presolve removed 2 rows and 2 columns
-Presolve time: 0.00s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 3.75
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 3.750000000000e+00, best bound 3.750000000000e+00, gap 0.0000%
-Add constr
-input stage2: 0.0
-Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (linux64 - "Ubuntu 22.04.1 LTS")
-
-CPU model: Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz, instruction set [SSE2|AVX|AVX2]
-Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
-
-Academic license 2462746 - for non-commercial use only - registered to a.___@student.utwente.nl
-Optimize a model with 2 rows, 2 columns and 2 nonzeros
-Model fingerprint: 0x0def270c
-Variable types: 0 continuous, 2 integer (0 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [8e-01, 8e-01]
-  Bounds range     [0e+00, 0e+00]
-  RHS range        [2e+00, 3e+00]
-Found heuristic solution: objective 3.7500000
-Presolve removed 2 rows and 2 columns
-Presolve time: 0.00s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 3.75
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 3.750000000000e+00, best bound 3.750000000000e+00, gap 0.0000%
-Add constr
-input stage2: 0.0
-Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (linux64 - "Ubuntu 22.04.1 LTS")
-
-CPU model: Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz, instruction set [SSE2|AVX|AVX2]
-Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
-
-Academic license 2462746 - for non-commercial use only - registered to a.___@student.utwente.nl
-Optimize a model with 2 rows, 2 columns and 2 nonzeros
-Model fingerprint: 0x0def270c
-Variable types: 0 continuous, 2 integer (0 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [8e-01, 8e-01]
-  Bounds range     [0e+00, 0e+00]
-  RHS range        [2e+00, 3e+00]
-Found heuristic solution: objective 3.7500000
-Presolve removed 2 rows and 2 columns
-Presolve time: 0.00s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 3.75
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 3.750000000000e+00, best bound 3.750000000000e+00, gap 0.0000%
-Add constr
-Presolve time: 0.00s
-Presolved: 0 rows, 2 columns, 0 nonzeros
-Variable types: 1 continuous, 1 integer (1 binary)
-input stage2: -0.0
-Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (linux64 - "Ubuntu 22.04.1 LTS")
-
-CPU model: Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz, instruction set [SSE2|AVX|AVX2]
-Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
-
-Academic license 2462746 - for non-commercial use only - registered to a.___@student.utwente.nl
-Optimize a model with 2 rows, 2 columns and 2 nonzeros
-Model fingerprint: 0x0def270c
-Variable types: 0 continuous, 2 integer (0 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [8e-01, 8e-01]
-  Bounds range     [0e+00, 0e+00]
-  RHS range        [2e+00, 3e+00]
-Found heuristic solution: objective 3.7500000
-Presolve removed 2 rows and 2 columns
-Presolve time: 0.00s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 3.75
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 3.750000000000e+00, best bound 3.750000000000e+00, gap 0.0000%
-Add constr
-
-Root relaxation: objective 1.000000e+00, 0 iterations, 0.00 seconds (0.00 work units)
-input stage2: 1.0
-Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (linux64 - "Ubuntu 22.04.1 LTS")
-
-CPU model: Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz, instruction set [SSE2|AVX|AVX2]
-Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
-
-Academic license 2462746 - for non-commercial use only - registered to a.___@student.utwente.nl
-Optimize a model with 2 rows, 2 columns and 2 nonzeros
-Model fingerprint: 0xf1050c72
-Variable types: 0 continuous, 2 integer (0 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [8e-01, 8e-01]
-  Bounds range     [0e+00, 0e+00]
-  RHS range        [1e+00, 2e+00]
-Found heuristic solution: objective 2.2500000
-Presolve removed 2 rows and 2 columns
-Presolve time: 0.00s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 2.25
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 2.250000000000e+00, best bound 2.250000000000e+00, gap 0.0000%
-Add constr
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-*    0     0               0       1.0000000    1.00000  0.00%     -    0s
-
-Cutting planes:
-  Lazy constraints: 1
-
-Explored 1 nodes (0 simplex iterations) in 0.03 seconds (0.00 work units)
-Thread count was 8 (of 8 available processors)
-
-Solution count 1: 1
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 1.000000000000e+00, best bound 1.000000000000e+00, gap 0.0000%
-
-User-callback calls 87, time in user-callback 0.03 sec
-Objective value is: 1.0
-<gurobi.Var x (value 1.0)>
-<gurobi.Var x (value 1.0)>
+User-callback calls 29, time in user-callback 0.01 sec
+Objective value is: 0.0
+<gurobi.Var x (value 0.0)>
+<gurobi.Var x (value 0.0)>
 <gurobi.Var zeta (value 0.0)>
