@@ -2,44 +2,36 @@ import gurobipy as gp
 from gurobipy import GRB
 import numpy as np
 
-#vb:
-def callBackSubTourElimination(model, where):
-    if where == GRB.Callback.MIPSOL:
-        solution = model.cbGetSolution(model._vars)
-        selected_edges = extractTours(solution)
-        if len(selected_edges) < model._number_cities:
-            # add subtour elimination constraint
-            model.cbLazy(gp.quicksum(model._vars[edge] for edge in selected_edges) <= len(selected_edges) - 1)
-
-
 def my_callback(model, where):
     global first_callback
+    global x
     if where == GRB.Callback.MIPSOL:
         valx = model.cbGetSolution(model._vars_x)
         valzeta = model.cbGetSolution(model.getVarByName('zeta'))
 
         if first_callback:
-            valzeta = -10000 #float('-inf')
+            valzeta = float('-inf')
             first_callback=False
 
-        #Get L1
         LL = Stage2par(valx,S,cases)
-
-        # compute z
-        z = valx + LL #first part moet 1st stage objective without zeta
-        print("Report", z, model._best_obj)
-        if z < model._best_obj:
-            # Update best solution so far
-            model._best_obj = z
+        z = valx + LL 
+        
+        if z < model._best_obj: #condition 1
+            model._best_obj = z              # Update best solution so far
             model._best_x = valx
 
-            if valzeta < LL:
-                model.cbLazy(x==1)
-                print("ACCESSED")
-        
+            if valzeta < LL: #condition 2
+                model.cbLazy(x== 1)
+                print("Constr added")
 
-def Stage2par(valx,S,cases):
-    print('input stage2:',valx)
+                #actual constraints I would want to add in this simple case: 
+                # if valx==1:
+                #     model.cbLazy(LL *(x) <= zeta)
+                # else:
+                #     model.cbLazy(-x*LL + LL<= zeta)   
+
+
+def Stage2par(valx, S,cases):
     model2 = gp.Model("Demand_test")
     model2.modelSense = GRB.MINIMIZE
     y={}
@@ -47,7 +39,6 @@ def Stage2par(valx,S,cases):
         y[s]=model2.addVar(name='y#'+str(s), lb=0.0, vtype = GRB.INTEGER) 
 
     for s in range(S):
-         #xsum = sum(valx.values())
          xsum =valx
          model2.addConstr(y[s]>=np.ceil(cases[s])- xsum)
 
@@ -74,8 +65,6 @@ model.setParam(GRB.Param.LazyConstraints, 1)
 
 x = model.addVar(name='x', lb=0.0, ub=1.0, vtype = GRB.BINARY)  
 zeta = model.addVar(name='zeta', lb=0.0, vtype = GRB.CONTINUOUS) 
-#model.addConstr(-x*3.75 + 3.75<= zeta)  
-#model.addConstr(zeta ==x)
 model.setObjective(x+zeta)
 
 # Set the callback function
@@ -92,4 +81,3 @@ if model.status == GRB.OPTIMAL:
 elif model.status == GRB.INFEASIBLE:
     print('Problem 2 is infeasible!')
 
-#The value of θ is set to −∞ and is ignored in the initialization computation.
