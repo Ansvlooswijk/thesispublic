@@ -1,0 +1,8 @@
+﻿Modality;Location;Min;Max;Extra;Bezetting;Verplicht;MonthMin;Bezetting_extra;Aantal;Costs
+CT;0;2;4;9;1;;;;;1
+CT;1;0;4;9;1;;;;;2
+MRI;3;2;4;9;1;;;;;1
+MRI;2;0;4;9;1;;;;;2
+Bucky;5;4;4;0;1;;;;;1
+Block;4;4;4;0;2;;;;;1
+Protocol;0;0;2;0;1;;1;;;1

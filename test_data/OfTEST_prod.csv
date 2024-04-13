@@ -1,0 +1,11 @@
+﻿Type,Location,Productivity
+CT,0,10
+MRI,0,10
+Echo,0,10
+Echo,1,10
+MRI,1,10
+CT,1,10
+MRI,3,10
+CT,3,10
+CT,5,10
+
