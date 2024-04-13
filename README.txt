@@ -18,7 +18,6 @@ A brief description of the files within this GitHub:
 - SubBuilder build the subproblems
 
 Notes: 
-- The code should be self sufficient with the provided test-set. The results are saved into .pkl files. The progress is written 
-to a logging file.
+- The code should be self sufficient with the provided test-set. The results are saved into .pkl files. The progress is written to a logging file.
 - The code is scarcely annotated with a mixture of Dutch and English comments, sorry :/. 
 
